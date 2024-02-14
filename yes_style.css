@@ -1,44 +1,28 @@
-
-
 body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    margin: 0; /* Remove default margin */
+    min-height: 90vh; /* Ensure content is vertically centered */
     background-color: #F8C8DC;
 }
 
 .header_text {
     font-family: 'Nunito';
-    font-size: 50px;
+    font-size: 5vw; /* Responsive font size */
     font-weight: bold;
     color: white;
     text-align: center;
-    margin-top: 20px;
-    margin-bottom: 10px;
+    margin: 2vh 0; /* Use viewport height for margins */
 }
 
-.body_text {
+.body_text, .body_name_text {
     font-family: 'Nunito';
-    font-size: 25px;
+    font-size: 2.5vw; /* Responsive font size */
     font-weight: bold;
     color: white;
     text-align: center;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-    margin-top: 20px;
-    margin-bottom: 0px;
-}
-
-.body_name_text {
-    font-family: 'Nunito';
-    font-size: 25px;
-    font-weight: bold;
-    color: white;
-    text-align: center;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: 2vh 0; /* Use viewport height for margins */
 }
 
 .gif_container {
@@ -47,37 +31,8 @@ body {
     align-items: center;
 }
 
-.left_image{
-    margin: 0px 20px 0px 0px;
-}
-
-.right_image{
-    margin: 0px 0px 0px 20px;
-    width: 10vmax;
-    height: 10vmax;
-}
-
-/* Adjust font sizes and margins for smaller screens */
-@media only screen and (max-width: 768px) {
-    .header_text {
-        font-size: 40px;
-        margin-bottom: 5px;
-    }
-    .body_text,
-    .body_name_text {
-        font-size: 20px;
-        margin-top: 15px;
-        margin-bottom: 10px;
-    }
-}
-
-/* Adjust image size for smaller screens */
-@media only screen and (max-width: 768px) {
-    .right_image {
-        width: 80px;
-        height: 80px;
-    }
-    .left_image {
-        margin: 0 10px 0 0;
-    }
+.left_image, .right_image {
+    margin: 0 2vw; /* Use viewport units for margins */
+    max-width: 40vw; /* Responsive image width */
+    height: auto;
 }
