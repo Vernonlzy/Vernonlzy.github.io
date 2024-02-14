@@ -55,3 +55,20 @@ body {
     width: 10vmax;
     height: 10vmax;
 }
+
+@media only screen and (max-width: 768px) {
+    .header_text {
+        font-size: 36px;
+    }
+    .body_text,
+    .body_name_text {
+        font-size: 18px;
+    }
+    .right_image {
+        width: 50vmin;
+        height: 50vmin;
+    }
+    .left_image {
+        margin: 0;
+    }
+}
