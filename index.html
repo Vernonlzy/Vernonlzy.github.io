@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login Page</title>
+        <link rel="stylesheet" href="./styles.css">
+    </head>
+    <body>
+        <div class="container">
+            <div >
+                <h1 class = "header_text">Please enter the 6 digit login pin!</h1>
+            </div>
+            <div class="pin-input">
+                <input type="number" min="0" max="9" value="0">
+                <input type="number" min="0" max="9" value="0">
+                <input type="number" min="0" max="9" value="0">
+                <input type="number" min="0" max="9" value="0">
+                <input type="number" min="0" max="9" value="0">
+                <input type="number" min="0" max="9" value="0">
+            </div>
+            <div class="buttons">
+                <button id="enterButton">Enter</button>
+                <button id="hintButton">Hint</button>
+            </div>
+
+            
+            <script>
+                const inputs = document.querySelectorAll('.pin-input input[type="number"]');
+                const enterButton = document.getElementById('enterButton');
+                const hintButton = document.getElementById('hintButton');
+            
+                enterButton.addEventListener('click', () => {
+                const pin = Array.from(inputs).map(input => input.value).join('');
+                if (pin === '130755') {
+                    alert('Login successful!');
+                    window.location.href = "question.html";
+                    // You can redirect to another page here or perform any other action
+                } else {
+                    alert('Invalid PIN. Please try again.');
+                }
+                });
+
+                hintButton.addEventListener('click', () => {
+                    alert('Hint: Your Iphone 15');
+                });
+
+                inputs.forEach(input => {
+                input.addEventListener('keydown', e => {
+                    if (e.key === 'ArrowUp') {
+                    increment(input);
+                    } else if (e.key === 'ArrowDown') {
+                    decrement(input);
+                    }
+                });
+                });
+            
+                function increment(input) {
+                let value = parseInt(input.value);
+                if (value < 9) {
+                    input.value = value + 1;
+                }
+                }
+            
+                function decrement(input) {
+                let value = parseInt(input.value);
+                if (value > 0) {
+                    input.value = value - 1;
+                }
+                }
+            </script>
+        </div>
+
+    </body>
+</html>
