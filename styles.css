@@ -2,7 +2,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90vh;
+    min-height: 100vh;
+    margin: 0; /* Remove default margin */
     background-color: #F8C8DC;
 }
 
@@ -71,8 +72,17 @@ body {
     }
 }
 
+@media only screen and (max-width: 768px) {
+    .pin-input input[type="number"] {
+        width: 30px; /* Adjust input width for smaller screens */
+        height: 30px; /* Adjust input height for smaller screens */
+        font-size: 1rem; /* Adjust font size for smaller screens */
+        margin: 0 3px; /* Adjust margin for smaller screens */
+    }
+}
+
 /* For screens smaller than 576px */
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 576px) and (max-height: 568px) {
     .header_text {
         font-size: 20px; /* Further reduce font size */
     }
